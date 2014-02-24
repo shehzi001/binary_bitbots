@@ -1,0 +1,30 @@
+shehzad@ubuntu:~rosrun tf tf_echo arm_link_0  gripper_palm_link
+At time 1392731391.732
+- Translation: [0.055, 0.001, 0.535]
+- Rotation: in Quaternion [0.000, -0.000, 0.005, 1.000]
+            in RPY [0.000, -0.000, 0.010]
+
+shehzad@ubuntu:~$ rosrun tf tf_echo gripper_palm_link  gripper_finger_link_l
+At time 1392731411.432
+- Translation: [0.004, 0.014, 0.046]
+- Rotation: in Quaternion [0.000, 0.000, 1.000, -0.000]
+            in RPY [0.000, -0.000, -3.142]
+            
+shehzad@ubuntu:~$ rosrun tf tf_echo arm_link_0  gripper_finger_link_r
+At time 1392731347.032
+- Translation: [0.059, -0.013, 0.581]
+- Rotation: in Quaternion [0.000, -0.000, 0.005, 1.000]
+            in RPY [0.000, -0.000, 0.010]
+
+
+shehzad@ubuntu:~$ rosrun tf tf_echo arm_link_0  gripper_finger_link_l
+At time 1392731357.132
+- Translation: [0.059, 0.015, 0.581]
+- Rotation: in Quaternion [-0.000, -0.000, 1.000, -0.005]
+            in RPY [-0.000, 0.000, -3.131]
+
+arm_joint_1 0 5.89921 1
+arm_joint_2 0 2.70526 1
+arm_joint_3 -5.18363 0 1
+arm_joint_4 0 3.57792 1
+arm_joint_5 0 5.84685 1
