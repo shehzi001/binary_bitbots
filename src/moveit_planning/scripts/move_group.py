@@ -75,7 +75,7 @@ def move_group():
 
 		#Wait for RVIZ to initialize
 		print "============ Waiting for RVIZ..."
-		rospy.sleep(10)
+		rospy.sleep(1)
 		
 		print "============ Reference frame:arm = " , group.get_planning_frame()
 		
@@ -96,31 +96,30 @@ def move_group():
 		print "============ Joint values: ", group_variable_values
 		
 		print "============Planning to move to right of base============"
-		#candle = [2.9496, 1.13446, -2.54818, 1.78896, 2.93075]
-		right_base = [1.525,0.001,-2.7956,0,0]
-		move_arm_joint_space(right_base)
+		#right_base = [1.525,0.001,-2.7956,0,0]
+		#move_arm_joint_space(right_base)
 		
 		print "============Planning to move to left of base============"
 		#pre_grasping = [0.1, 2.48996, -1.53309, 1.17502, 2.92980]
-		left_base = [4.2,0.0010,-2.7665,0,0]
-		move_arm_joint_space(left_base)
+		#left_base = [4.2,0.0010,-2.7665,0,0]
+		#move_arm_joint_space(left_base)
 		#====================================================
 		
 		print "============Planning to move to candle position============"
-                candle = [2.9496, 1.13446, -2.54818, 1.78896, 2.93075]
-                #right_base = [1.525,0.001,-2.7956,0,0]
-                move_arm_joint_space(candle)
-
+		candle = [2.9496, 1.13446, -2.54818, 1.78896, 2.93075]
+		#right_base = [1.525,0.001,-2.7956,0,0]
+		move_arm_joint_space(candle)
+		
 		print "============Planning to move to pre-grasping standing position============"
 		#grasp_standing = [2.93836, 2.020597, -1.88253, 3.36243, 3.01283]
-		pre_grasping = [3.02221, 2.48996, -1.53309, 1.17502, 2.92980]
-		move_arm_joint_space(pre_grasping)
-
+		#pre_grasping = [3.02221, 2.48996, -1.53309, 1.17502, 2.92980]
+		#move_arm_joint_space(pre_grasping)
+		
 		print "============Planning to move to pre-grasping standing position========"
-                grasp_standing = [2.93836, 2.020597, -1.88253, 3.36243, 3.01283]
-                #pre_grasping = [5.9, 2.48996, -1.53309, 1.17502, 2.92980]
-                move_arm_joint_space(grasp_standing)
-
+		#grasp_standing = [2.93836, 2.020597, -1.88253, 3.36243, 3.01283]
+		#pre_grasping = [5.9, 2.48996, -1.53309, 1.17502, 2.92980]
+		#move_arm_joint_space(grasp_standing)
+		         
 		#====================================================
 		print "============Sending cart pose============"
 		#cart_pose = geometry_msgs.msg.Pose()
@@ -162,9 +161,9 @@ if __name__=='__main__':
 		rospy.Subscriber("/matrix_pose",PoseStamped,move_arm_pose)
 		#listener = tf.TransformListener()
 		move_group()
-		#moveit_commander.roscpp_shutdown()
+		moveit_commander.roscpp_shutdown()
 		#get_object_pose(listener)
-		rospy.spin()
+		#rospy.spin()
 	except rospy.ROSInterruptException:
 		pass
 		

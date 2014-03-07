@@ -1,0 +1,161 @@
+\form#0:\[ {\bf M}_{i}\,=\,\left(\vec{P}_{i},\, \vec{V}_{i},\, \vec{A}_{i} \right) \]
+\form#1:\[ {\bf M}_{i}^{\,trgt}\,=\,\left(\vec{P}_{i}^{\,trgt},\, \vec{V}_{i}^{\,trgt},\, \vec{0} \right) \]
+\form#2:\[ {\bf B}_{i}\,=\,\left( \vec{V}_{i}^{\,max},\, \vec{A}_{i}^{\,max},\, \vec{J}_{i}^{\,max} \right) \]
+\form#3:$ {\bf M}_{i+1} $
+\form#4:$ \vec{S}_i $
+\form#5:$ _kt_{i}^{\,min} $
+\form#6:$ k \ \in\ \{1,\dots,K\}$
+\form#7:$ t_i^{\,sync} $
+\form#8:$ {\cal P}_{Step1} $
+\form#9:$ _k\Psi_i^{\,Step1}\ \in\ {\cal P}_{Step1} $
+\form#10:$ k \ \in\ \{1,\dots,K\} $
+\form#11:$ Z\,=\,3 $
+\form#12:$ Z\,=\,1 $
+\form#13:$ _k{\cal Z}_{i} $
+\form#14:\[ _k^z\zeta_{i}\,=\,\left[^z_kt_{i}^{\,begin},\,^z_kt_{i}^{\,end}\right],\ \mbox{with}\ z\ \in\ \left\{1,\,\dots,\,Z\right\} \]
+\form#15:\[ _k^z\zeta_{i}\ \forall\ (z,\,k)\ \in \ \left\{1,\,\dots,\,Z\right\}\times\left\{1,\,\dots,\,K\right\} \]
+\form#16:$ _k\vec{M}_i $
+\form#17:$ _k\vec{M}_i^{\,trgt} $
+\form#18:$ _k\Psi_i^{\,Step2} $
+\form#19:$ k $
+\form#20:$ {\cal P}_{Step2} $
+\form#21:$ T_{i+1}$
+\form#22:$t=0$
+\form#23:$ 10^{12} $
+\form#24:$ 10^{11} $
+\form#25:$ \vec{V}_{i}^{\,\underline{trgt}} $
+\form#26:$ \vec{A}_i^{\,max} $
+\form#27:$ \vec{J}_i^{\,max} $
+\form#28:$ \vec{V}_{i}^{\,\underline{trgt}}\ =\ \vec{0}$
+\form#29:$ \vec{V}_{i}^{\,\underline{trgt}}\ \neq\ \vec{0}$
+\form#30:$ \vec{V}_{i}^{\,\underline{trgt}}\ =\ \vec{V}_i$
+\form#31:\[ \begin{array}{rrcl} \forall\ k\ \in\ \left\{1,\,\dots,\,K\right\}:\ \ \ \ &_{k}P_{i+1}&\ =\ &_{k}P_{i}\ +\ _{k}V_{i}\,T^{\,cycle}\ +\ \frac{1}{2}\,_{k}A_{i}\,\left(T^{\,cycle}\right)^2\\[3ex] &_{k}V_{i+1}&\ =\ &_{k}V_{i}\ +\ _{k}A_{i}\,T^{\,cycle}\\[3ex] &_{k}A_{i+1}&\ =\ &_{k}A_{i}\\ \end{array} \]
+\form#32:$ K $
+\form#33:$ T^{\,cycle} $
+\form#34:$ _{k}P_{i} $
+\form#35:$ T_i $
+\form#36:$ _{k}V_{i} $
+\form#37:$ _{k}A_{i} $
+\form#38:$ _{k}P_{i+1} $
+\form#39:$ T_{i+1} $
+\form#40:$ _{k}V_{i+1} $
+\form#41:$ _{k}A_{i+1} $
+\form#42:$ T_{i} $
+\form#43:$ T_{i+1}\ -\ T_{i}\ =\ T^{\,cycle} $
+\form#44:$ t\ =\ 3075\,ms$
+\form#45:$ t\ =\ 6190\,ms$
+\form#46:$ t\ =\ 9305\,ms, 12420\,ms, 15535\,ms$
+\form#47:$ \vec{P}_i(t)\ =\ \left(\,\!_1p_i(t),\,_2p_i(t)\right) $
+\form#48:$ {\bf M}_i $
+\form#49:$ \vec{P}_i \ \Longrightarrow \ $
+\form#50:$ \vec{V}_i \ \Longrightarrow \ $
+\form#51:$ \vec{A}_i \ \Longrightarrow \ $
+\form#52:$ {\bf B}_i \ \Longrightarrow \ $
+\form#53:$ \vec{V}_i^{\,max} \ \Longrightarrow \ $
+\form#54:$ \vec{A}_i^{\,max} \ \Longrightarrow \ $
+\form#55:$ \vec{J}_i^{\,max} \ \Longrightarrow \ $
+\form#56:$ {\bf M}_i^{\,trgt} \ \Longrightarrow \ $
+\form#57:$ \vec{P}_i^{\,trgt} \ \Longrightarrow \ $
+\form#58:$ \vec{V}_i^{\,trgt} \ \Longrightarrow \ $
+\form#59:$ \vec{S}_i \ \Longrightarrow \ $
+\form#60:$ \vec{P}_i^{\,max} \ \Longrightarrow \ $
+\form#61:$ \vec{P}_i^{\,min} \ \Longrightarrow \ $
+\form#62:$ 1,\,\dots,\,K $
+\form#63:\[ \vec{P}_i\ =\ \left(\,\!_1P_i,\,\dots,\,_kP_i,\,\dots,\,_KP_i\right)^T \]
+\form#64:$ _kP_i $
+\form#65:$ _kS_i $
+\form#66:$ _kP_i^{\,trgt} $
+\form#67:$ \vec{V}_i^{\,max} $
+\form#68:$ _kV_i^{\,max} $
+\form#69:$ _kA_i^{\,max} $
+\form#70:$ _kJ_i^{\,max} $
+\form#71:$ _kV_i^{\,max} \ > \ 0 $
+\form#72:$ _kA_i^{\,max} \ > \ 0 $
+\form#73:$ _kJ_i^{\,max} \ > \ 0 $
+\form#74:$ \vec{V}_i^{\,trgt} $
+\form#75:\[ _kV_i^{\,trgt}\ \le \ _kV_i^{\,max}\ \forall\ \left\{1,\,\dots,\,K\right\} \]
+\form#76:\[ \frac{\displaystyle \mbox{max}\left( \,\!_kJ_i^{\,max}, \, \,\!_kA_i^{\,max}, \, \,\!_kV_i^{\,max}, \, \left|\,\!_kP_i\right|, \, \left|\,\!_kP_i^{\,trgt}\right|, \, \left|\,\!_kV_i\right|, \, \left|\,\!_kA_i\right| \right)}{\displaystyle \mbox{min}\left(\,\!_kJ_i^{\,max}, \, \,\!_kA_i^{\,max}, \, \,\!_kV_i^{\,max} \right)} \ \le\ 10^8 \]
+\form#77:\[ \frac{\displaystyle \mbox{max}\left( \,\!_kJ_i^{\,max}, \, \,\!_kA_i^{\,max}, \, \left|\,\!_kP_i\right|, \, \left|\,\!_kV_i^{\,trgt}\right|, \, \left|\,\!_kV_i\right|, \, \left|\,\!_kA_i\right| \right)}{\displaystyle \mbox{min}\left(\,\!_kJ_i^{\,max}, \, \,\!_kA_i^{\,max} \right)} \ \le\ 10^{10} \]
+\form#78:$ 10^{10}$
+\form#79:\[ \begin{array}{rcl} _kV_i^{\,max}&=&10000000\\[2ex] _kA_i^{\,max}&=&500\\[2ex] _kJ_i^{\,max}&=&1000\\[2ex] _kP_i&=&25\\[2ex] _kV_i&=&-35\\[2ex] _kA_i&=&-475\\[2ex] _kP_i^{\,trgt}&=&5\\[2ex] _kV_i^{\,trgt}&=&5000\\[2ex] \end{array} \]
+\form#80:$ \frac{\displaystyle _kV_i^{\,max}}{\displaystyle _kP_i^{\,trgt}} \ =\ \frac{\displaystyle 10^7}{\displaystyle 5}\ =\ 2\cdot10^6\ \le 10^8 $
+\form#81:\[ \begin{array}{rcl} _kV_i^{\,max}&=&10000000\\[2ex] _kA_i^{\,max}&=&500\\[2ex] _kJ_i^{\,max}&=&0.001\\[2ex] _kP_i&=&25\\[2ex] _kV_i&=&-35\\[2ex] _kA_i&=&-475\\[2ex] _kP_i^{\,trgt}&=&5\\[2ex] _kV_i^{\,trgt}&=&5000\\[2ex] \end{array} \]
+\form#82:$ \frac{\displaystyle _kV_i^{\,max}}{\displaystyle _kJ_i^{\,max}} \ =\ \frac{\displaystyle 10^7}{\displaystyle 10^{-3}}\ =\ 10^{10}\ \not\leq 10^8 $
+\form#83:$ \vec{v}_i^{\,max} $
+\form#84:$ \vec{a}_i^{\,max} $
+\form#85:$ _1\vec{M}_0 $
+\form#86:$ _1\vec{M}_0^{\,trgt} $
+\form#87:$ _1\vec{B}_0 $
+\form#88:$ _1v_0\,=\,400\,mm/s $
+\form#89:$ _1v_i^{\,max}\,=\,300\,mm/s $
+\form#90:$ \vec{P}_{i+1} \ \Longrightarrow \ $
+\form#91:$ \vec{V}_{i+1} \ \Longrightarrow \ $
+\form#92:$ \vec{A}_{i+1} \ \Longrightarrow \ $
+\form#93:$ {\bf M}_i^{\,trgt} $
+\form#94:$ \vec{P}_i^{\,trgt} $
+\form#95:$ \overrightarrow{\mbox{min}}\Big(\vec{p}_i\left(t\right)\Big) \ \Longrightarrow \ $
+\form#96:$ \overrightarrow{\mbox{max}}\Big(\vec{p}_i\left(t\right)\Big) \ \Longrightarrow \ $
+\form#97:$ o_i(t) $
+\form#98:${\bf M}_0^{\,trgt}\,=\,\left(\vec{P}_{0}^{trgt},\,\vec{V}_{0}^{trgt},\,\vec{0}\right)$
+\form#99:${\bf M}_0 $
+\form#100:${\bf M}_0^{\,trgt} $
+\form#101:$t\,=\,3075\,ms$
+\form#102:${\bf M}_{3075}^{\,trgt}\,=\,{\bf M}_0^{\,trgt}$
+\form#103:$ _1p_i^{\,min}=-650\,mm$
+\form#104:$ t_i^{\,sync}$
+\form#105:$ _1p_i^{\,max}=-175\,mm$
+\form#106:$ _3p_i^{\,max}=-150\,mm$
+\form#107:$ O(n) $
+\form#108:$ n $
+\form#109:$ {\bf B}_{i+1}\,=\,{\bf B}_{i} $
+\form#110:$ {\bf M}^{\,trgt}_{i+1}\,=\,{\bf M}^{\,trgt}_{i} $
+\form#111:$ \vec{S}_{i+1}\,=\,\vec{S}_{i} $
+\form#112:$ {\bf W}_0\,=\,\left(\,\!_1\vec{W}_0,\,_2\vec{W}_0\right)^T $
+\form#113:$ {\bf M}_{1000}^{\,trgt} $
+\form#114:$ t\,=\,3873\,ms $
+\form#115:$ {\bf M}_0^{\,trgt} $
+\form#116:$ t\,=\,6756\,ms $
+\form#117:$ {\bf W}_0 $
+\form#118:$ {\bf B}_i $
+\form#119:$ {\bf S}_i $
+\form#120:$ {\bf M}_{i} $
+\form#121:$ \vec{P}_i{\,trgt} $
+\form#122:$ \vec{V}_i{\,max} $
+\form#123:$ 10^{10} $
+\form#124:$10^{10}\,s$
+\form#125:$ \vec{P}_i^{\,max} $
+\form#126:$ \vec{P}_i^{\,min} $
+\form#127:$ \bf B_i = \left(\vec{V}_i^{\,max},\,\vec{A}_i^{\,max},\,\vec{J}_i^{\,max},\right) $
+\form#128:$ \vec{S}_{i} $
+\form#129:$ \vec{P}_{i} $
+\form#130:$ \vec{V}_{i} $
+\form#131:$ \vec{A}_{i} $
+\form#132:$ \vec{A}_{i}^{\,max} $
+\form#133:$ \vec{J}_{i}^{\,max} $
+\form#134:$ \vec{V}_{i}^{\,trgt} $
+\form#135:$ \vec{P}_{i}^{\,max} $
+\form#136:$ \vec{P}_{i}^{\,min} $
+\form#137:$ p(t)\ =\ p_3t^3\ +\ p_2t^2\ +\ p_1t\ +\ p_0 $
+\form#138:$ v(t)\ =\ v_2t^2\ +\ v_1t\ +\ v_0 $
+\form#139:$ a(t)\ =\ a_1t\ +\ a_0 $
+\form#140:$\Longleftrightarrow\ \ \ p_0$
+\form#141:$\Longleftrightarrow\ \ \ p_1$
+\form#142:$\Longleftrightarrow\ \ \ p_2$
+\form#143:$\Longleftrightarrow\ \ \ p_3$
+\form#144:$\Longleftrightarrow\ \ \ v_0$
+\form#145:$\Longleftrightarrow\ \ \ v_1$
+\form#146:$\Longleftrightarrow\ \ \ v_2$
+\form#147:$\Longleftrightarrow\ \ \ a_0$
+\form#148:$\Longleftrightarrow\ \ \ a_1$
+\form#149:$ k\ \in\ \{0,\,\dots,\,K\} $
+\form#150:$ l\ \in\ \{0,\,\dots,\,14\} $
+\form#151:$ \vec{P}_{i+1} $
+\form#152:$ \vec{V}_{i+1} $
+\form#153:$ \vec{A}_{i+1} $
+\form#154:$_{k}\vec{M}_{i}^{\,trgt} $
+\form#155:$ t_{i}^{,sync} $
+\form#156:$\ _{k}V_{i}^{\,trgt} $
+\form#157:$ t_{i}^{\,sync} $
+\form#158:$ \vec{V}_i $
+\form#159:$ \vec{V}_{i}^{\,max} $
+\form#160:$ \vec{P}_{i}^{\,trgt} $

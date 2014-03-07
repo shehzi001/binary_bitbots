@@ -1,0 +1,29 @@
+<package>
+  <name>base_controller</name>
+  <description>base_controller</description>
+  <maintainer email="x@x.de">x</maintainer>
+  <license>LGPL, BSD</license>
+  <version>0.1.0</version>
+
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <build_depend>message_generation</build_depend>
+
+  <build_depend>roscpp</build_depend>
+  <build_depend>geometry_msgs</build_depend>
+  <build_depend>std_msgs</build_depend>
+  <build_depend>tf</build_depend>
+  <build_depend>message_generation</build_depend>
+  <build_depend>rospy</build_depend>
+  
+  <run_depend>rospy</run_depend>
+  <run_depend>geometry_msgs</run_depend>
+  <run_depend>std_msgs</run_depend>
+  <run_depend>roscpp</run_depend>
+  <run_depend>message_runtime</run_depend>
+
+</package>
+
+
+

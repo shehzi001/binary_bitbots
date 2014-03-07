@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<launch>
+
+  <!-- navigation goals/orientations -->
+  <include file="$(find hbrs_default_env_config)/upload_param.launch" />
+
+  <!-- visualize navigation goals -->
+  <node pkg="raw_tools" type="navigation_goals_as_marker.py" name="raw_navigation_goals_as_marker"/>
+  
+  <!-- map server -->
+  <arg name="map" default="$(find hbrs_default_env_config)/$(env ROBOT_ENV)/map.yaml" />
+  
+  <node name="map_server" pkg="map_server" type="map_server" args="$(arg map)"/>
+
+  <!-- AMCL -->
+  <include file="$(find raw_2dnav)/ros/launch/amcl.launch" />
+
+ 
+</launch>
