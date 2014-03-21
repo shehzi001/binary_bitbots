@@ -20,9 +20,9 @@ int main(int argc, char** argv)
 		//creating fake transform from base_link but shifted to an arbitrary position
 		try
 		{
-			fake_tf.setOrigin( tf::Vector3(0.0, 0.0, 0.0) ); //shifting the origin
-			fake_tf.setRotation( tf::createQuaternionFromRPY(0.0, 3.14159265-0.78, 0.0) ); //preserving the orientation of the parent
-			tf_broadcaster.sendTransform(tf::StampedTransform(fake_tf, ros::Time::now(), "virtual_object", "graspable_object"));
+			fake_tf.setOrigin( tf::Vector3(0.4,0.0, 0.2) ); //shifting the origin
+			fake_tf.setRotation( tf::createQuaternionFromRPY(0.0, 0.0 , 0.0) ); //preserving the orientation of the parent
+			tf_broadcaster.sendTransform(tf::StampedTransform(fake_tf, ros::Time::now(), "/base_footprint", "graspable_object"));
 		}
 		catch (tf::TransformException ex)
 		{

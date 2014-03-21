@@ -1,6 +1,6 @@
 <launch>
 
-	<include file="$(find openni2_launch)/launch/openni2.launch" />
+	<!--include file="$(find openni2_launch)/launch/openni2.launch" /-->
 
 	<node pkg="marker_localization" type="agent_marker_localization_node" name="agent_marker_localization_node" output="screen">
 		<!--remap from="datamatrix" to="/datamatrix" /-->

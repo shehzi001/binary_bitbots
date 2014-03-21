@@ -18,6 +18,9 @@
 
 #include <kdl/frames_io.hpp>
 
+#include <tf/transform_broadcaster.h>
+#include <tf/transform_listener.h>
+
 using namespace std;
 using namespace Eigen;
 
@@ -41,6 +44,8 @@ Eigen::MatrixXd jacPseudoInv;
 
 void computePivot();
 void computerQR();
+
+
 
 /* \brief Pointer to group for planning */
 robot_state::JointModelGroup* joint_model_group;
@@ -165,7 +170,7 @@ Eigen::VectorXd moveit_fk(Eigen::VectorXd jointState)
 	const Eigen::Affine3d &end_effector_state = kinematic_state->
 	getGlobalLinkTransform(kinematic_state->getLinkModel(joint_model_group->getLinkModelNames().back()));
 	
-	//moveit_ik(end_effector_state);
+	moveit_ik(end_effector_state);
 	
 	//Eigen::Quaterniond quaternion (end_effector_state.rotation());
 	Eigen::VectorXd eulerAngles = end_effector_state.rotation().eulerAngles(0,1,2);
@@ -176,7 +181,7 @@ Eigen::VectorXd moveit_fk(Eigen::VectorXd jointState)
 	
 	eefPose << end_effector_state.translation(), eulerAngles;
 	
-	//ROS_INFO_STREAM("end_eff:\n " << eefPose);
+	ROS_INFO_STREAM("end_eff:\n " << eefPose);
 	
 	return eefPose;
 }
@@ -242,7 +247,8 @@ void moveitIKPseudoInverseSolver(void)
 	 goal_joint_state[i] = candle[i];
 	 arm_joint_angles[i] = pre_grasp[i];
 	}
-	//moveit_fk(jointState);
+	
+	moveit_fk(current_joint_state);
 	
 	
 	/* moving arm to initial position */
@@ -253,10 +259,30 @@ void moveitIKPseudoInverseSolver(void)
 	Eigen::VectorXd initial_pose = moveit_fk(current_joint_state);   //initial Pose;
 	
 	Eigen::VectorXd goal_pose = moveit_fk(goal_joint_state); //final Pose;
+
 	
+	static tf::TransformBroadcaster br;
+	tf::StampedTransform transform_fixed;
+	
+	
+	ros::NodeHandle nh;
+	while(nh.ok())
+	{
+	//creating fixed right shoulder frame with the same orientation as torso_1 but shifted to right shoulder origin
+			try
+			{
+				transform_fixed.setOrigin( tf::Vector3(0.05,0,0.078));
+				transform_fixed.setRotation(tf::Quaternion(0,0,0));
+				br.sendTransform(tf::StampedTransform(transform_fixed, ros::Time::now(), "arm_link_5", "tool_tip"));
+			}
+			catch (tf::TransformException ex)
+			{
+				//ROS_ERROR("%s",ex.what());
+			}
+	}
 	//change final pose 
-	 //goal_pose[0] = -0.1; 
-	//goal_pose[1] = 0.02;
+	goal_pose[0] -= 0.1; 
+	goal_pose[1] = 0.02;
 	goal_pose[2] -= 0.05;
 	
 	
@@ -310,7 +336,7 @@ void moveitIKPseudoInverseSolver(void)
 				}
 				ROS_INFO_STREAM("Solution found with intermediate Points : " <<  iter );
 				ROS_INFO_STREAM("Moving arm to goal Pose.");
-				moveit_move_arm(arm_joint_angles);
+				//moveit_move_arm(arm_joint_angles);
 			}
 			//else
 			//	ROS_INFO_STREAM("No solution found Joint Limit Violation.");

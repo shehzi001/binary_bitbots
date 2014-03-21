@@ -42,7 +42,7 @@ def move_arm_joint_space(joint_angles):
 		#robot.set_current_state(robot.get_current_state().pose)
 		#group.setStartState()
 		#group.clear_pose_targets()
-		group.stop()
+		#group.stop()
 		rospy.sleep(5) 
 		
 def move_arm_cart_space(cart_pose,joint_angles):
@@ -71,6 +71,25 @@ def move_arm_cart_space(cart_pose,joint_angles):
 		# Uncomment below line when working with a real robot
 		#group.go(wait=True)
 
+def move_arm_cart_pose():
+		print "============ Generating plan 1"
+		pose_target = geometry_msgs.msg.Pose()
+		#0.6851, 0.1749, 0.6851, -0.1749
+		pose_target.orientation.x = 0.6851
+		pose_target.orientation.y = 0.1749
+		pose_target.orientation.z = 0.6851
+		pose_target.orientation.w = -0.1749
+		pose_target.position.x = 0.12
+		pose_target.position.y = 0.25
+		pose_target.position.z = -0.1
+		group.set_pose_target(pose_target)
+		
+		plan1 = group.plan()
+
+		print "============ Waiting while RVIZ displays plan1..."
+		rospy.sleep(5)
+		
+
 def move_group():
 
 		#Wait for RVIZ to initialize
@@ -95,33 +114,33 @@ def move_group():
 		group_variable_values = group.get_current_joint_values()
 		print "============ Joint values: ", group_variable_values
 		
-		print "============Planning to move to right of base============"
+		#print "============Planning to move to right of base============"
 		#right_base = [1.525,0.001,-2.7956,0,0]
 		#move_arm_joint_space(right_base)
 		
-		print "============Planning to move to left of base============"
+		#print "============Planning to move to left of base============"
 		#pre_grasping = [0.1, 2.48996, -1.53309, 1.17502, 2.92980]
 		#left_base = [4.2,0.0010,-2.7665,0,0]
 		#move_arm_joint_space(left_base)
 		#====================================================
 		
-		print "============Planning to move to candle position============"
+		#print "============Planning to move to candle position============"
 		candle = [2.9496, 1.13446, -2.54818, 1.78896, 2.93075]
 		#right_base = [1.525,0.001,-2.7956,0,0]
 		move_arm_joint_space(candle)
 		
-		print "============Planning to move to pre-grasping standing position============"
+		#print "============Planning to move to pre-grasping standing position============"
 		#grasp_standing = [2.93836, 2.020597, -1.88253, 3.36243, 3.01283]
 		#pre_grasping = [3.02221, 2.48996, -1.53309, 1.17502, 2.92980]
 		#move_arm_joint_space(pre_grasping)
 		
-		print "============Planning to move to pre-grasping standing position========"
+		#print "============Planning to move to pre-grasping standing position========"
 		#grasp_standing = [2.93836, 2.020597, -1.88253, 3.36243, 3.01283]
 		#pre_grasping = [5.9, 2.48996, -1.53309, 1.17502, 2.92980]
 		#move_arm_joint_space(grasp_standing)
 		         
 		#====================================================
-		print "============Sending cart pose============"
+		print "============planning cart pose============"
 		#cart_pose = geometry_msgs.msg.Pose()
 		#cart_pose.position.x = 0.1
 		#cart_pose.position.y = 0.1
@@ -132,6 +151,8 @@ def move_group():
 		#cart_pose.orientation.w = 0.0
 		#move_arm_cart_space(cart_pose)
 		
+		move_arm_cart_pose()
+		rospy.sleep(5)
 		print "============ STOPPING=========================="
 
 def move_arm_pose(msg):
@@ -156,7 +177,7 @@ def move_arm_pose(msg):
 
 if __name__=='__main__':
 	try:
-		rospy.init_node('move_group',anonymous=True)
+		rospy.init_node('move_group_temp',anonymous=True)
 		rospy.loginfo("move_group running")
 		rospy.Subscriber("/matrix_pose",PoseStamped,move_arm_pose)
 		#listener = tf.TransformListener()

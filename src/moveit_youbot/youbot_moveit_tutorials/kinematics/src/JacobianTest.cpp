@@ -44,7 +44,7 @@ int main(int argc, char **argv)
 
      joint_model_group = kinematic_model->getJointModelGroup("arm_1");    
 
-     jacobianTest();
+     //jacobianTest();
 
      std::cout<<"Test complete!"<<std::endl;
 
