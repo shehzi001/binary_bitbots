@@ -17,7 +17,7 @@ int main(int argc, char** argv) {
 	ros::init(argc, argv, "agent_marker_localization_node");
 	ros::NodeHandle nh;
 	//sub = nh.subscribe("datamatrix", 1000, chatterCallback);
-        ros::Publisher pub = nh.advertise<geometry_msgs::PoseStamped>("matrix_pose", 5);
+    ros::Publisher pub = nh.advertise<geometry_msgs::PoseStamped>("matrix_pose", 5);
 	ROS_INFO("agent_marker_localization_node");
 	
 	
@@ -30,10 +30,11 @@ int main(int argc, char** argv) {
 	{
 	              ros::Time now = ros::Time::now();
 			try 
-			{       listener.waitForTransform("/arm_link_1","/datamatrix_frame", now, ros::Duration(1.0));
+			{       
+				listener.waitForTransform("/arm_link_1","/datamatrix_frame", now, ros::Duration(1.0));
 				listener.lookupTransform("/arm_link_1","/datamatrix_frame", now , transform);
 				ROS_INFO("datamatrix_to_Base_position: [%f,%f,%f]",transform.getOrigin().x(),transform.getOrigin().y(), transform.getOrigin().z());
-                                ROS_INFO("datamatrix_to_Base_orientation: [%f,%f,%f,%f]",transform.getRotation().x(),transform.getRotation().y(), transform.getRotation().z(),transform.getRotation().w());
+                ROS_INFO("datamatrix_to_Base_orientation: [%f,%f,%f,%f]",transform.getRotation().x(),transform.getRotation().y(), transform.getRotation().z(),transform.getRotation().w());
 				frame.pose.position.x = transform.getOrigin().x();
 				frame.pose.position.y = transform.getOrigin().y();
 				frame.pose.position.z = transform.getOrigin().z();
@@ -44,13 +45,13 @@ int main(int argc, char** argv) {
 				frame.pose.orientation.w = transform.getRotation().w();
 										
 				pub.publish(frame);
-                        } catch (tf::TransformException ex) {
-				continue;//ROS_ERROR("%s",ex.what());
+            } catch (tf::TransformException ex) {
+			 	continue;//ROS_ERROR("%s",ex.what());
 			}catch (tf::ExtrapolationException ex) {
-                                continue;//ROS_ERROR("%s",ex.what());
-                        }catch (tf::ConnectivityException ex) {
-                                continue;//ROS_ERROR("%s",ex.what());
-                        }
+                continue;//ROS_ERROR("%s",ex.what());
+            }catch (tf::ConnectivityException ex) {
+                continue;//ROS_ERROR("%s",ex.what());
+            }
 		    rate.sleep();
 	}
 	 

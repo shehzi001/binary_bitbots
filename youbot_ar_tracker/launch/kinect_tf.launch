@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<launch>
+    <node pkg="tf" type="static_transform_publisher" name="odom_to_cam" 
+    args="2.38 -0.98 2.159 3.14 0.59 0.0 odom camera_link 10" />
+</launch>
+
